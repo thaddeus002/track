@@ -29,7 +29,7 @@ static int store_data(int timestamp, float lat, float lon) {
         return -1;
     }
 
-    fprintf(fd, "%d, %2.5f, %3.6f", timestamp, lat, lon);
+    fprintf(fd, "%d, %2.5f, %3.6f\n", timestamp, lat, lon);
 
     fclose(fd);
     return 0;
