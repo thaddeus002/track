@@ -36,6 +36,14 @@ static int store_data(int timestamp, float lat, float lon) {
 }
 
 
+/**
+ * Send an empty response to the web client.
+ */
+static void empty_response() {
+
+    fprintf(stdout, "Content-type: text/html\n\n");
+}
+
 
 int main(int argc, char **argv) {
 
@@ -51,6 +59,8 @@ int main(int argc, char **argv) {
     lon = atof(parse_query(queryString, LON_STRING));
 
     store_data(timestamp, lat, lon);
+
+    empty_response();
 
     return 0;
 }
