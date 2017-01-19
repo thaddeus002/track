@@ -51,7 +51,7 @@ static int query_string_analyse(char *queryString) {
             } else {
                 PARAMS[NB_PARAM]=prec;
                 *pos='\0';
-                prec = pos++;
+                prec = ++pos;
                 st=READING_VALUE;
             }
             break;
@@ -62,7 +62,7 @@ static int query_string_analyse(char *queryString) {
             } else {
                 VALUES[NB_PARAM]=prec;
                 *pos='\0';
-                prec = pos++;
+                prec = ++pos;
                 st=READING_PARAM;
                 NB_PARAM++;
             }
