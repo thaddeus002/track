@@ -6,6 +6,7 @@
 
 #include <stdlib.h>
 #include <stdio.h>
+#include <time.h>
 #include "wsquery.h"
 
 // store file
@@ -21,6 +22,27 @@
 static int store_data(int timestamp, float lat, float lon) {
 
     FILE *fd;
+    // timestamp in seconds
+    time_t now;
+
+    //verify data validity
+
+    now = time(NULL);
+    if((time - timestamp > 1) || (timestamp - time > 60)) {
+        fprintf(stderr, "Invalide time : %l\n", timestamp);
+    }
+
+    if((lat < -90) || (lat > 90)) {
+        fprintf(stderr, "Latitude value out of bounds : %f\n", lat);
+        return -1;
+    }
+
+    if((lon < -180) || (lon > 180)) {
+        fprintf(stderr, "Latitude value out of bounds : %f\n", lat);
+        return -1;
+    }
+
+    // store data
 
     fd = fopen(DATA_FILE, "a");
 
