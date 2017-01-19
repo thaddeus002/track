@@ -28,7 +28,7 @@ static int store_data(int timestamp, float lat, float lon) {
     //verify data validity
 
     now = time(NULL);
-    if((time - timestamp > 1) || (timestamp - time > 60)) {
+    if(((now - timestamp) > 1) || ((timestamp - now) > 60)) {
         fprintf(stderr, "Invalide time : %l\n", timestamp);
     }
 
