@@ -25,21 +25,21 @@ static int store_data(int timestamp, float lat, float lon) {
     // timestamp in seconds
     time_t now;
 
-    //verify data validity
+    // check data validity
 
     now = time(NULL);
-    if(((now - timestamp) > 1) || ((timestamp - now) > 60)) {
-        fprintf(stderr, "Invalide time : %d\n", timestamp);
+    if(((now - timestamp) > 60) || ((timestamp - now) > 2)) {
+        fprintf(stderr, "%d - Invalid time : %d\n", now, timestamp);
         return -1;
     }
 
     if((lat < -90) || (lat > 90)) {
-        fprintf(stderr, "Latitude value out of bounds : %f\n", lat);
+        fprintf(stderr, "%d - Latitude value out of bounds : %f\n", now, lat);
         return -1;
     }
 
     if((lon < -180) || (lon > 180)) {
-        fprintf(stderr, "Latitude value out of bounds : %f\n", lat);
+        fprintf(stderr, "%d - Latitude value out of bounds : %f\n", now, lat);
         return -1;
     }
 
