@@ -1,6 +1,6 @@
 /**
- * file test_wsquery.c
- * unit test for wsquery module
+ * \file test_wsquery.c
+ * Unit test for wsquery module.
  */
 
 
@@ -14,7 +14,7 @@
 
 
 /**
- * Unit test
+ * Unit test.
  * \return 0 in case of success
  */
 int main(int argc, char **argv) {

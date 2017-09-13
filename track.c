@@ -1,6 +1,9 @@
 /**
- * file track.c
- * Main cgi program for the "track my phone" project
+ * \file track.c
+ * \brief Main cgi program for the "track my phone" project.
+ *
+ * Will receive a GET request, with elements timestamp, lat and lon.
+ * Then store them in a csv file.
  */
 
 

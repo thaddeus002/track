@@ -1,6 +1,6 @@
 /**
- * file wsquery.c
- * parse a webservice query
+ * \file wsquery.c
+ * Parse a webservice query.
  */
 
 #include <string.h>
